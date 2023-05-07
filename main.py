@@ -12,14 +12,15 @@ numery_komputera = list()
 numery_gracza = list()
 gra = 0
 
-for gra in range(0, 10):
+
+
+for gra in range(0, 100):
     wybor_komputera = int(1 + random() * 9)
     print(wybor_komputera)
     if wybor_komputera in numery_komputera or wybor_komputera in numery_gracza:
         continue
     else:
         numery_komputera.append(wybor_komputera)
-        gra=gra+1
     if 1 in numery_komputera:
         nr_1 = "x"
     if 1 in numery_gracza:
@@ -64,11 +65,10 @@ for gra in range(0, 10):
     wybor_gracza = input("Wskaz nr pola, ktore chcesz zaznaczyc:  ")
     wybor_gracza = int(wybor_gracza)
     if wybor_gracza not in numery_komputera or wybor_gracza not in numery_gracza:
-        print("Wybrales zajete pole")
         numery_gracza.append(wybor_gracza)
     else:
+        print("Wybrales zajete pole")
         wybor_gracza = input("Wskaz nr pola, ktore chcesz zaznaczyc:  ")
-        gra=gra+1
     if 1 in numery_komputera:
         nr_1 = "x"
     if 1 in numery_gracza:
@@ -110,3 +110,5 @@ for gra in range(0, 10):
  {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
     print("Twoj ruch\n\n")
     continue
+
+
