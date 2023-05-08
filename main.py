@@ -138,6 +138,7 @@ while True:
  {}  {}  {} 
  {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
                 ruch = ruch + 1
+
                 #if wygrana_1 in numery_gracza or wygrana_2 in numery_gracza or wygrana_3 in numery_gracza:
                     #print("Komputer wygral")
                     #continue
