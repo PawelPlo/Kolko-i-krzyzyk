@@ -1,4 +1,3 @@
-from random import random
 while True:
     nr_1 = "-"
     nr_2 = "-"
@@ -9,6 +8,8 @@ while True:
     nr_7 = "-"
     nr_8 = "-"
     nr_9 = "-"
+    gra = 0
+    ruch = 0
     zapytanie = input("czy chcesz rozpoczac nowa gre? t/n:")
     if zapytanie == "n":
         break
@@ -22,6 +23,7 @@ while True:
         gra = 0
         ruch = 0
         for gra in range(0, 100):
+            from random import random
             wybor_komputera = int(1 + random() * 9)
             print(wybor_komputera)
             if wybor_komputera in numery_komputera or wybor_komputera in numery_gracza:
