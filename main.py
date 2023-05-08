@@ -22,10 +22,9 @@ while True:
         numery_gracza = list()
         gra = 0
         ruch = 0
+        from random import random
         for gra in range(0, 100):
-            from random import random
             wybor_komputera = int(1 + random() * 9)
-            print(wybor_komputera)
             if wybor_komputera in numery_komputera or wybor_komputera in numery_gracza:
                 continue
             else:
