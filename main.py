@@ -1,5 +1,4 @@
 while True:
-    #numery = list("1"23456789)
     nr_1 = "-"
     nr_2 = "-"
     nr_3 = "-"
@@ -10,13 +9,21 @@ while True:
     nr_8 = "-"
     nr_9 = "-"
     wygrana_1 = [1, 2, 3]
+    wygrana_1 = sorted(wygrana_1)
     wygrana_2 = [4, 5, 6]
+    wygrana_2 = sorted(wygrana_2)
     wygrana_3 = [7, 8, 9]
+    wygrana_3 = sorted(wygrana_3)
     wygrana_4 = [1, 5, 9]
+    wygrana_4 = sorted(wygrana_4)
     wygrana_5 = [3, 5, 7]
+    wygrana_5 = sorted(wygrana_5)
     wygrana_6 = [1, 4, 7]
+    wygrana_6 = sorted(wygrana_6)
     wygrana_7 = [2, 5, 8]
+    wygrana_7 = sorted(wygrana_7)
     wygrana_8 = [3, 6, 9]
+    wygrana_8 = sorted(wygrana_8)
     gra = 0
     ruch = 0
     zapytanie = input("czy chcesz rozpoczac nowa gre? t/n:")
@@ -27,10 +34,13 @@ while True:
         continue
     if zapytanie == "t":
         print("Kolko i krzyzyk. Gre rozpoczyna komputer. Komputer gra znakiem 'x', Ty znakiem 'o'")
-        numery_komputera = list()
-        numery_komputera = sorted(numery_komputera)
-        numery_gracza = list()
-        numery_gracza = sorted(numery_gracza)
+        print("""Uklad pol: 
+         [1]  [2]  [3] 
+         [4]  [5]  [6] 
+         [7]  [8]  [9]""")
+        print()
+        numery_komputera = []
+        numery_gracza = []
         gra = 0
         ruch = 0
         from random import random
@@ -76,24 +86,25 @@ while True:
                 nr_9 = "x"
             if 9 in numery_gracza:
                 nr_9 = "o"
-            print(""" {}  {}  {} 
- {}  {}  {} 
- {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
+            print("Ruch komputera:")
+            print("""       {}  {}  {} 
+       {}  {}  {} 
+       {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
+            print()
             ruch = ruch + 1
-            if [1, 2, 3] in sorted(numery_komputera) or [4, 5, 6] in sorted(numery_komputera) or [7, 8, 9] in sorted(numery_komputera):
+            if wygrana_1 == sorted(numery_komputera) or wygrana_2 == sorted(numery_komputera) or wygrana_3 == sorted(numery_komputera):
                 print("Komputer wygral")
-                continue
-            if [1, 5, 9] in sorted(numery_komputera) or [3, 5, 7] in sorted(numery_komputera) or [1, 4, 7] in sorted(numery_komputera):
+                break
+            if wygrana_4 == sorted(numery_komputera) or wygrana_5 == sorted(numery_komputera) or wygrana_6 == sorted(numery_komputera):
                 print("Komputer wygral")
-                continue
-            if [2, 5, 8] in sorted(numery_komputera) or [3, 6, 9] in sorted(numery_komputera):
+                break
+            if wygrana_7 == sorted(numery_komputera) or wygrana_8 == sorted(numery_komputera):
                 print("Komputer wygral")
-                continue
+                break
             if ruch == 9:
                 print("Gra skonczona")
                 continue
             else:
-                print("Ruch komputera\n\n")
                 while True:
                     wybor_gracza = input("Wskaz nr pola, ktore chcesz zaznaczyc:  ")
                     wybor_gracza = int(wybor_gracza)
@@ -138,19 +149,19 @@ while True:
                     nr_9 = "x"
                 if 9 in numery_gracza:
                     nr_9 = "o"
-                print(""" {}  {}  {} 
- {}  {}  {} 
- {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
+                print("""       {}  {}  {} 
+       {}  {}  {} 
+       {}  {}  {} """.format(nr_1, nr_2, nr_3, nr_4, nr_5, nr_6, nr_7, nr_8, nr_9))
                 ruch = ruch + 1
-                if [1, 2, 3] in sorted(numery_gracza) or [4, 5, 6] in sorted(numery_gracza) or [7, 8, 9] in sorted(numery_gracza):
+                if wygrana_1 == sorted(numery_gracza) or wygrana_2 == sorted(numery_gracza) or wygrana_3 == sorted(numery_gracza):
                     print("Wygrales")
-                    continue
-                if [1, 5, 9] in sorted(numery_gracza) or [3, 5, 7] in sorted(numery_gracza) or [1, 4, 7] in sorted(numery_gracza):
+                    break
+                if wygrana_4 == sorted(numery_gracza) or wygrana_5 == sorted(numery_gracza) or wygrana_6 == sorted(numery_gracza):
                     print("Wygrales")
-                    continue
-                if [2, 5, 8] in sorted(numery_gracza) or [3, 6, 9] in sorted(numery_gracza):
+                    break
+                if wygrana_7 == sorted(numery_gracza) or wygrana_8 == sorted(numery_gracza):
                     print("Wygrales")
-                    continue
+                    break
                 else:
                     print("Twoj ruch\n\n")
                     continue
